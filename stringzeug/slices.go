@@ -1,4 +1,4 @@
-package stringutils
+package stringzeug
 
 // ContainsString checks if the given slice contains the supplied needle string.
 func ContainsString(slice []string, needle string) bool {

@@ -1,20 +1,20 @@
-package stringutils_test
+package stringzeug_test
 
 import (
-	"github.com/plombardi89/gozeug/stringutils"
+	"github.com/plombardi89/gozeug/stringzeug"
 	"github.com/stretchr/testify/assert"
 	"strings"
 	"testing"
 )
 
 func TestIsNotEmpty(t *testing.T) {
-	assert.True(t, stringutils.IsNotEmpty([]string{"a"}))
-	assert.False(t, stringutils.IsNotEmpty([]string{}))
+	assert.True(t, stringzeug.IsNotEmpty([]string{"a"}))
+	assert.False(t, stringzeug.IsNotEmpty([]string{}))
 }
 
 func TestIsEmpty(t *testing.T) {
-	assert.True(t, stringutils.IsEmpty([]string{}))
-	assert.False(t, stringutils.IsEmpty([]string{"a"}))
+	assert.True(t, stringzeug.IsEmpty([]string{}))
+	assert.False(t, stringzeug.IsEmpty([]string{"a"}))
 }
 
 func TestRemoveAtIndex(t *testing.T) {
@@ -37,7 +37,7 @@ func TestRemoveAtIndex(t *testing.T) {
 	}
 
 	for _, r := range table {
-		out, res := stringutils.RemoveAtIndex(r.in, r.index)
+		out, res := stringzeug.RemoveAtIndex(r.in, r.index)
 		assert.Equal(t, r.out, out)
 		assert.Equal(t, r.succeeded, res)
 	}
@@ -54,7 +54,7 @@ func TestRemoveIf(t *testing.T) {
 	}
 
 	for _, r := range table {
-		out := stringutils.RemoveIf(r.in, r.predicate)
+		out := stringzeug.RemoveIf(r.in, r.predicate)
 		assert.Equal(t, r.out, out)
 	}
 }
