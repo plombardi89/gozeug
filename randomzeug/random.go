@@ -45,12 +45,12 @@ func (r *Random) RandomSelectionFromStringSlice(values []string) string {
 		return ""
 	}
 
-	return values[rand.Intn(len(values))]
+	return values[r.rand.Intn(len(values))]
 }
 
 // RandomBool returns a random boolean value.
 func (r *Random) RandomBool() bool {
-	return rand.Intn(2) == 0
+	return r.rand.Intn(2) == 0
 }
 
 func (r *Random) SampleStringSlice(values []string, size int) ([]string, error) {
