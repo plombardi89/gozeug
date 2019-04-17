@@ -18,7 +18,10 @@ func NewRandom() *Random {
 
 // NewSeededRandom returns a new Random seeded with the provided value.
 func NewSeededRandom(seed int64) *Random {
-	return &Random{rand: rand.New(rand.NewSource(seed))}
+	r := rand.New(rand.NewSource(0))
+	r.Seed(seed)
+
+	return &Random{rand: r}
 }
 
 // RandomString returns a random string of the given length from a standard lowercase-only alphanumeric alphabet.
