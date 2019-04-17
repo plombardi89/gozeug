@@ -18,7 +18,7 @@ func NewRandom() *Random {
 
 // NewSeededRandom returns a new Random seeded with the provided value.
 func NewSeededRandom(seed int64) *Random {
-	r := rand.New(rand.NewSource(0))
+	r := rand.New(rand.NewSource(seed))
 	r.Seed(seed)
 
 	return &Random{rand: r}
